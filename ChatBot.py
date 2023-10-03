@@ -11,7 +11,7 @@ def saveResponse(filePath: str, data: dict):
         json.dump(data, file, indent=2)
 
 def findBestMatches(userQuestion: str, questions: list[str]) -> str | None:
-    matches: list = get_close_matches(userQuestion, questions, n=1, cutoff=0.7)
+    matches: list = get_close_matches(userQuestion, questions, n=1, cutoff=0.6)
     return matches[0] if matches else None
 
 def getAnswerForQuestion(question: str, Response: dict) -> str | None:
